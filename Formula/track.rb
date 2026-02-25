@@ -2,36 +2,39 @@
 # frozen_string_literal: true
 
 # Homebrew formula for Track CLI
-# Source: https://github.com/OrekGames/track-cli
-# This file is automatically updated by CI on each release.
+# A CLI for issue tracking systems (YouTrack, Jira, GitHub, GitLab)
+#
+# Installation:
+#   brew tap OrekGames/tap
+#   brew install track
 
 class Track < Formula
   desc "CLI for issue tracking systems (YouTrack, Jira, GitHub, GitLab)"
   homepage "https://github.com/OrekGames/track-cli"
-  version "v0.1.0"
+  version "0.0.3"
   license "MIT"
 
   on_macos do
     on_arm do
       url "https://github.com/OrekGames/track-cli/releases/download/v#{version}/track-#{version}-aarch64-apple-darwin.tar.gz"
-      sha256 "PLACEHOLDER_SHA256_ARM64"
+      sha256 "e97a31ac43b99bfdcb81165dbfb5886355ad0639bc8eb0f051ae0137e7cb5d20"
     end
 
     on_intel do
       url "https://github.com/OrekGames/track-cli/releases/download/v#{version}/track-#{version}-x86_64-apple-darwin.tar.gz"
-      sha256 "PLACEHOLDER_SHA256_X86_64"
+      sha256 "008b6cf4b380427296303b9f274140eba276602248aa9719639b4b9ff27d958f"
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/OrekGames/track-cli/releases/download/v#{version}/track-#{version}-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "PLACEHOLDER_SHA256_LINUX_ARM64"
+      sha256 "b535410bbb9976eacd95345b798fe245388fa83e4ccd4a7451783444ca26a7cd"
     end
 
     on_intel do
       url "https://github.com/OrekGames/track-cli/releases/download/v#{version}/track-#{version}-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "PLACEHOLDER_SHA256_LINUX_X86_64"
+      sha256 "adc2846705df41d24c351224976b26ac34ac88456c0c8ea566d04c545aeb236a"
     end
   end
 
