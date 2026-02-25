@@ -11,30 +11,30 @@
 class Track < Formula
   desc "CLI for issue tracking systems (YouTrack, Jira, GitHub, GitLab)"
   homepage "https://github.com/OrekGames/track-cli"
-  version "0.0.3"
+  version "1.0.0"
   license "MIT"
 
   on_macos do
     on_arm do
       url "https://github.com/OrekGames/track-cli/releases/download/v#{version}/track-#{version}-aarch64-apple-darwin.tar.gz"
-      sha256 "e97a31ac43b99bfdcb81165dbfb5886355ad0639bc8eb0f051ae0137e7cb5d20"
+      sha256 "5d72d4c86634dba52708e94ec1f657eaf2b8f99e18be84ae231cd408275d2f29"
     end
 
     on_intel do
       url "https://github.com/OrekGames/track-cli/releases/download/v#{version}/track-#{version}-x86_64-apple-darwin.tar.gz"
-      sha256 "008b6cf4b380427296303b9f274140eba276602248aa9719639b4b9ff27d958f"
+      sha256 "86e54616efbfcec008f69dbbb5e22bcfd8bab168e55a5b121416b141a01cd2a1"
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/OrekGames/track-cli/releases/download/v#{version}/track-#{version}-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "b535410bbb9976eacd95345b798fe245388fa83e4ccd4a7451783444ca26a7cd"
+      sha256 "526bdcbbb7b445cb1c59a17303f3b0885b74d65b61a90148ee73a6b46a09de27"
     end
 
     on_intel do
       url "https://github.com/OrekGames/track-cli/releases/download/v#{version}/track-#{version}-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "adc2846705df41d24c351224976b26ac34ac88456c0c8ea566d04c545aeb236a"
+      sha256 "607cf901f6eb4ebb272629b40ae5a079703beef36ada67c03d1d068326175076"
     end
   end
 
@@ -45,18 +45,43 @@ class Track < Formula
     bash_completion.install "track.bash" => "track" if File.exist?("track.bash")
     zsh_completion.install "_track" if File.exist?("_track")
     fish_completion.install "track.fish" if File.exist?("track.fish")
+
+    # Install documentation
+    doc.install "README.md" if File.exist?("README.md")
+    doc.install "agent_guide.md" if File.exist?("agent_guide.md")
+
+    # Install agent skill file to share prefix (used by post_install)
+    if File.exist?("agent-skills/SKILL.md")
+      (share/"track").install "agent-skills/SKILL.md"
+    end
+  end
+
+  def post_install
+    skill_src = share/"track/SKILL.md"
+    return unless skill_src.exist?
+
+    # Install skill globally for all supported AI coding tools
+    %w[.claude .copilot .cursor .gemini].each do |tool_dir|
+      skill_dir = Pathname.new(Dir.home)/tool_dir/"skills"/"track"
+      skill_dir.mkpath
+      cp skill_src, skill_dir/"SKILL.md" unless (skill_dir/"SKILL.md").exist?
+    end
   end
 
   def caveats
     <<~EOS
-      To use track, configure your tracker credentials.
+      To use track, configure your tracker credentials:
 
-      Set environment variables:
+        track init --url https://your-instance.com --token YOUR_TOKEN
+
+      Or set environment variables:
         export TRACKER_URL="https://your-tracker-instance.com"
         export TRACKER_TOKEN="your-api-token"
 
-      Or create a config file:
-        track init --url https://your-instance.com --token YOUR_TOKEN
+      AI coding tool skills installed for:
+        Claude Code, Copilot, Cursor, and Gemini CLI
+        (~/.claude/skills/track/, ~/.copilot/skills/track/,
+         ~/.cursor/skills/track/, ~/.gemini/skills/track/)
 
       For more information, see:
         track --help
