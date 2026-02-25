@@ -11,30 +11,30 @@
 class Track < Formula
   desc "CLI for issue tracking systems (YouTrack, Jira, GitHub, GitLab)"
   homepage "https://github.com/OrekGames/track-cli"
-  version "1.0.0"
+  version "1.0.1"
   license "MIT"
 
   on_macos do
     on_arm do
       url "https://github.com/OrekGames/track-cli/releases/download/v#{version}/track-#{version}-aarch64-apple-darwin.tar.gz"
-      sha256 "5d72d4c86634dba52708e94ec1f657eaf2b8f99e18be84ae231cd408275d2f29"
+      sha256 "ef9d31b272024b71fc335e73c361a1d96b3b05fe99e390f88333dee67c56e092"
     end
 
     on_intel do
       url "https://github.com/OrekGames/track-cli/releases/download/v#{version}/track-#{version}-x86_64-apple-darwin.tar.gz"
-      sha256 "86e54616efbfcec008f69dbbb5e22bcfd8bab168e55a5b121416b141a01cd2a1"
+      sha256 "d731ffdc7cfa02f1dd7843aaef5ef1ab78cd8c422b3f18e36101c1beb8887773"
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/OrekGames/track-cli/releases/download/v#{version}/track-#{version}-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "526bdcbbb7b445cb1c59a17303f3b0885b74d65b61a90148ee73a6b46a09de27"
+      sha256 "15106cacd42f5ba8431c216e89b72df3c2fb841cf07ea4c619256d9a516ddc22"
     end
 
     on_intel do
       url "https://github.com/OrekGames/track-cli/releases/download/v#{version}/track-#{version}-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "607cf901f6eb4ebb272629b40ae5a079703beef36ada67c03d1d068326175076"
+      sha256 "05c379510283f5e8f2f33ceef9e501b9c8ef7df3515a83b33c38997c5610ad3d"
     end
   end
 
@@ -64,7 +64,7 @@ class Track < Formula
     %w[.claude .copilot .cursor .gemini].each do |tool_dir|
       skill_dir = Pathname.new(Dir.home)/tool_dir/"skills"/"track"
       skill_dir.mkpath
-      cp skill_src, skill_dir/"SKILL.md" unless (skill_dir/"SKILL.md").exist?
+      cp skill_src, skill_dir/"SKILL.md"
     end
   end
 
