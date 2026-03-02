@@ -11,30 +11,30 @@
 class Track < Formula
   desc "CLI for issue tracking systems (YouTrack, Jira, GitHub, GitLab)"
   homepage "https://github.com/OrekGames/track-cli"
-  version "1.1.3"
+  version "1.1.4"
   license "MIT"
 
   on_macos do
     on_arm do
       url "https://github.com/OrekGames/track-cli/releases/download/v#{version}/track-#{version}-aarch64-apple-darwin.tar.gz"
-      sha256 "31fb17242a01d083bb8175dda62fd23841e007daad37a8009c4821590ea67716"
+      sha256 "dd2f57f4b0e4c289dad2582aed6d949e16686fe24859b9d89e866ad7bb1e2e74"
     end
 
     on_intel do
       url "https://github.com/OrekGames/track-cli/releases/download/v#{version}/track-#{version}-x86_64-apple-darwin.tar.gz"
-      sha256 "f619deb731f61929cdbf4288faade1612d4f6173a02ffcb4b1681c8f9aaf5bf6"
+      sha256 "077f633587cfeb6ea302f90fbc54e7112e5ff8e6e1c4d01c78a3105f1cbd4211"
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/OrekGames/track-cli/releases/download/v#{version}/track-#{version}-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "b6de9607ef1a67b5dd3b115def9c348da3104832d9e5d3e84b1d2fe188a5c8d0"
+      sha256 "75addd8d48690dd8a40be3ea4c266924df70dfead2f5c89a4f05dc777b823468"
     end
 
     on_intel do
       url "https://github.com/OrekGames/track-cli/releases/download/v#{version}/track-#{version}-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "28b3ce3ef254343fed055ccafe384108472fbdc6873a4fb0e0acd7b7802f4b69"
+      sha256 "accc7f508d88e16038412b36efa280d337ffc7d9ce82944c22a7cfa4511450f0"
     end
   end
 
