@@ -23,25 +23,25 @@ class Track < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/OrekGames/track-cli/releases/download/v1.19.1/track-1.19.1-aarch64-apple-darwin.tar.gz"
-      sha256 "19157d827af1166c0bf37364df4a4193f1420e9b3b4eb99762fe6ab11363daba"
+      url "https://github.com/OrekGames/track-cli/releases/download/v1.19.2/track-1.19.2-aarch64-apple-darwin.tar.gz"
+      sha256 "PLACEHOLDER_SHA256_ARM64"
     end
 
     on_intel do
-      url "https://github.com/OrekGames/track-cli/releases/download/v1.19.1/track-1.19.1-x86_64-apple-darwin.tar.gz"
-      sha256 "c0cd91c0eb99141f63dd63f8fab12282a5b06552532e4d572e81c94d34d2cb57"
+      url "https://github.com/OrekGames/track-cli/releases/download/v1.19.2/track-1.19.2-x86_64-apple-darwin.tar.gz"
+      sha256 "PLACEHOLDER_SHA256_X86_64"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/OrekGames/track-cli/releases/download/v1.19.1/track-1.19.1-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "322bac21acb79504b6c09c868d1343af9fa29754fb4db0f902da4b1bdbdf1bc6"
+      url "https://github.com/OrekGames/track-cli/releases/download/v1.19.2/track-1.19.2-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "PLACEHOLDER_SHA256_LINUX_ARM64"
     end
 
     on_intel do
-      url "https://github.com/OrekGames/track-cli/releases/download/v1.19.1/track-1.19.1-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "a58f610242e3fb244b7afc751a58388986869db2fafd647d37e022f0d331ff74"
+      url "https://github.com/OrekGames/track-cli/releases/download/v1.19.2/track-1.19.2-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "PLACEHOLDER_SHA256_LINUX_X86_64"
     end
   end
 
