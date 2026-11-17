@@ -23,25 +23,25 @@ class Track < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/OrekGames/track-cli/releases/download/v1.19.1/track-1.19.1-aarch64-apple-darwin.tar.gz"
-      sha256 "19157d827af1166c0bf37364df4a4193f1420e9b3b4eb99762fe6ab11363daba"
+      url "https://github.com/OrekGames/track-cli/releases/download/v1.19.3/track-1.19.3-aarch64-apple-darwin.tar.gz"
+      sha256 "1955b7049579e16c01fb2981b5b4ad90eb3f132c8b6c816b53ef8622d3d9d033"
     end
 
     on_intel do
-      url "https://github.com/OrekGames/track-cli/releases/download/v1.19.1/track-1.19.1-x86_64-apple-darwin.tar.gz"
-      sha256 "c0cd91c0eb99141f63dd63f8fab12282a5b06552532e4d572e81c94d34d2cb57"
+      url "https://github.com/OrekGames/track-cli/releases/download/v1.19.3/track-1.19.3-x86_64-apple-darwin.tar.gz"
+      sha256 "b94c67911b7e4b70b94773cf2cc88c79650906661066941d5fb5c2b2528f03e7"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/OrekGames/track-cli/releases/download/v1.19.1/track-1.19.1-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "322bac21acb79504b6c09c868d1343af9fa29754fb4db0f902da4b1bdbdf1bc6"
+      url "https://github.com/OrekGames/track-cli/releases/download/v1.19.3/track-1.19.3-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "0a73e62f7f1a9bbbd8eae920daa3969b9d5b610cd313b19c2000730be3754042"
     end
 
     on_intel do
-      url "https://github.com/OrekGames/track-cli/releases/download/v1.19.1/track-1.19.1-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "a58f610242e3fb244b7afc751a58388986869db2fafd647d37e022f0d331ff74"
+      url "https://github.com/OrekGames/track-cli/releases/download/v1.19.3/track-1.19.3-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "b2ff361c81465996d490d6f83f007c608a6a3975e8335c881746aae9721dc09f"
     end
   end
 
